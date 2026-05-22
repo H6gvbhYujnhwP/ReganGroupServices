@@ -146,7 +146,7 @@ export default function Home() {
   const counts = [c0, c1, c2, c3];
 
   return (
-    <div className="pt-16 md:pt-20">
+    <div className="pt-24 md:pt-28">
       {/* HERO */}
       <section className="relative overflow-hidden" style={{ background: "#fff", minHeight: "90vh" }}>
         {/* Green diagonal background */}

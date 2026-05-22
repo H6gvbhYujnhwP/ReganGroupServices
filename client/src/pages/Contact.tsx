@@ -62,7 +62,7 @@ function ContactForm() {
 
 export default function Contact() {
   return (
-    <div className="pt-16 md:pt-20">
+    <div className="pt-24 md:pt-28">
       {/* Hero */}
       <section className="py-16" style={{ background: "linear-gradient(135deg, #eef7e6 0%, #d4edba 100%)" }}>
         <div className="container text-center">

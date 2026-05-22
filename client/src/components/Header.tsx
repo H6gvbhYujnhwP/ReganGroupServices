@@ -34,13 +34,13 @@ export default function Header() {
         boxShadow: scrolled ? "0 2px 24px rgba(91,158,31,0.10)" : "0 1px 0 #e8f5d8",
       }}
     >
-      <div className="container flex items-center justify-between h-16 md:h-20">
+      <div className="container flex items-center justify-between h-24 md:h-28">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
           <img
             src={RGS_LOGO}
             alt="RGS Logo"
-            className="h-10 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
+            className="h-20 md:h-24 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
           />
           <div className="hidden sm:block">
             <div

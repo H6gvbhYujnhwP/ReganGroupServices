@@ -34,7 +34,7 @@ export default function Quote() {
   };
 
   if (step === 4) return (
-    <div className="pt-16 md:pt-20 min-h-screen flex items-center justify-center" style={{ background: "#f7fdf2" }}>
+    <div className="pt-24 md:pt-28 min-h-screen flex items-center justify-center" style={{ background: "#f7fdf2" }}>
       <div className="text-center max-w-md mx-auto px-4 py-20">
         <CheckCircle size={72} className="mx-auto mb-6" style={{ color: "#5B9E1F" }} />
         <h2 className="text-4xl font-extrabold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>
@@ -57,7 +57,7 @@ export default function Quote() {
   );
 
   return (
-    <div className="pt-16 md:pt-20">
+    <div className="pt-24 md:pt-28">
       {/* Hero */}
       <section className="py-12" style={{ background: "linear-gradient(135deg, #eef7e6 0%, #d4edba 100%)" }}>
         <div className="container text-center">

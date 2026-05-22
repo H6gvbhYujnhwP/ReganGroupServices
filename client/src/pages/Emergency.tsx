@@ -56,7 +56,7 @@ function EmergencyForm() {
 
 export default function Emergency() {
   return (
-    <div className="pt-16 md:pt-20">
+    <div className="pt-24 md:pt-28">
       {/* Hero — dark urgent */}
       <section className="py-20" style={{ background: "#1a2e0a" }}>
         <div className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
