@@ -2,7 +2,7 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock, ChevronRight } from "lucide-react";
 
-const RGS_LOGO = "/manus-storage/rgs-logo_b8dec175.png";
+const RGS_LOGO = "/rgs-logo.png";
 
 export default function Footer() {
   return (

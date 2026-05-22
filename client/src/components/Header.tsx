@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, Phone } from "lucide-react";
 
-const RGS_LOGO = "/manus-storage/rgs-logo_b8dec175.png";
+const RGS_LOGO = "/rgs-logo.png";
 
 const navLinks = [
   { href: "/", label: "Home" },
