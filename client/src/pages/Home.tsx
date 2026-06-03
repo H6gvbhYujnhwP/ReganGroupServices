@@ -5,7 +5,7 @@ import { Link } from "wouter";
 import { Phone, CheckCircle, Star, ArrowRight, Shield, Clock, Award, Users } from "lucide-react";
 import { WrenchSVG, PlumbingSVG, CCTVSvg, DrainageSVG, ShieldSVG, EmergencySVG } from "@/components/SVGTools";
 
-const RGS_LOGO = "/manus-storage/rgs-logo_b8dec175.png";
+const RGS_LOGO = "/rgs-circle-logo.png";
 
 // Animated counter hook
 function useCounter(target: number, duration = 2000, start = false) {
@@ -200,9 +200,9 @@ export default function Home() {
             <div className="relative w-72 h-72 md:w-96 md:h-96">
               {/* Central logo */}
               <div className="absolute inset-0 flex items-center justify-center z-10">
-                <div className="w-32 h-32 rounded-full flex items-center justify-center shadow-xl"
+                <div className="w-36 h-36 rounded-full flex items-center justify-center shadow-xl"
                   style={{ background: "#fff", border: "3px solid #77A734" }}>
-                  <img src={RGS_LOGO} alt="RGS" className="w-20 h-20 object-contain" />
+                  <img src={RGS_LOGO} alt="RGS" className="w-32 h-32 object-contain" />
                 </div>
               </div>
               {/* Orbiting tools */}
