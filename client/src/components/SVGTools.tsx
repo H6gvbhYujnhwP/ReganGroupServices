@@ -11,7 +11,7 @@ interface SVGToolProps {
 }
 
 // Animated dot that travels along a path
-function AnimatedDot({ pathId, duration = 3, delay = 0, color = "#5B9E1F" }: {
+function AnimatedDot({ pathId, duration = 3, delay = 0, color = "#77A734" }: {
   pathId: string; duration?: number; delay?: number; color?: string;
 }) {
   return (
@@ -24,7 +24,7 @@ function AnimatedDot({ pathId, duration = 3, delay = 0, color = "#5B9E1F" }: {
 }
 
 // Wrench SVG with dot trail
-export function WrenchSVG({ className = "", size = 200, color = "#5B9E1F" }: SVGToolProps) {
+export function WrenchSVG({ className = "", size = 200, color = "#77A734" }: SVGToolProps) {
   return (
     <svg viewBox="0 0 200 200" width={size} height={size} className={className} aria-hidden="true">
       <defs>
@@ -53,7 +53,7 @@ export function WrenchSVG({ className = "", size = 200, color = "#5B9E1F" }: SVG
 }
 
 // Pipe/Plumbing SVG with dot trail
-export function PlumbingSVG({ className = "", size = 200, color = "#5B9E1F" }: SVGToolProps) {
+export function PlumbingSVG({ className = "", size = 200, color = "#77A734" }: SVGToolProps) {
   return (
     <svg viewBox="0 0 200 200" width={size} height={size} className={className} aria-hidden="true">
       <defs>
@@ -85,7 +85,7 @@ export function PlumbingSVG({ className = "", size = 200, color = "#5B9E1F" }: S
 }
 
 // CCTV Camera SVG
-export function CCTVSvg({ className = "", size = 200, color = "#5B9E1F" }: SVGToolProps) {
+export function CCTVSvg({ className = "", size = 200, color = "#77A734" }: SVGToolProps) {
   return (
     <svg viewBox="0 0 200 200" width={size} height={size} className={className} aria-hidden="true">
       <defs>
@@ -119,7 +119,7 @@ export function CCTVSvg({ className = "", size = 200, color = "#5B9E1F" }: SVGTo
 }
 
 // Drainage/Manhole SVG
-export function DrainageSVG({ className = "", size = 200, color = "#5B9E1F" }: SVGToolProps) {
+export function DrainageSVG({ className = "", size = 200, color = "#77A734" }: SVGToolProps) {
   return (
     <svg viewBox="0 0 200 200" width={size} height={size} className={className} aria-hidden="true">
       <defs>
@@ -159,7 +159,7 @@ export function DrainageSVG({ className = "", size = 200, color = "#5B9E1F" }: S
 }
 
 // Service Package / Shield SVG
-export function ShieldSVG({ className = "", size = 200, color = "#5B9E1F" }: SVGToolProps) {
+export function ShieldSVG({ className = "", size = 200, color = "#77A734" }: SVGToolProps) {
   return (
     <svg viewBox="0 0 200 200" width={size} height={size} className={className} aria-hidden="true">
       <defs>
@@ -200,7 +200,7 @@ export function EmergencySVG({ className = "", size = 200, color = "#D4A017" }: 
         style={{ animation: "drawPath 1.5s ease forwards 0.2s", "--path-length": "400" } as React.CSSProperties}
       />
       <AnimatedDot pathId="bolt-path" duration={2} delay={0} color={color} />
-      <AnimatedDot pathId="bolt-path" duration={2} delay={1} color="#5B9E1F" />
+      <AnimatedDot pathId="bolt-path" duration={2} delay={1} color="#77A734" />
       {/* Glow rings */}
       {[40, 60, 80].map((r, i) => (
         <circle key={i} cx="100" cy="100" r={r} stroke={color} strokeWidth="1" fill="none" opacity={0.06 + i * 0.02}

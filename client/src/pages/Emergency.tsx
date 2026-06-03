@@ -19,30 +19,30 @@ function EmergencyForm() {
     <div className="text-center py-10">
       <CheckCircle size={56} className="mx-auto mb-4" style={{ color: "#D4A017" }} />
       <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#fff" }}>Emergency Request Received!</h3>
-      <p style={{ color: "#c8e6a0" }}>Our team will call you back within 15 minutes.</p>
+      <p style={{ color: "#b8d880" }}>Our team will call you back within 15 minutes.</p>
     </div>
   );
   return (
     <form onSubmit={e => { e.preventDefault(); setSent(true); }} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-xs font-semibold mb-1" style={{ color: "#c8e6a0" }}>Your Name *</label>
+          <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Your Name *</label>
           <input required className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
             placeholder="Full name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
         </div>
         <div>
-          <label className="block text-xs font-semibold mb-1" style={{ color: "#c8e6a0" }}>Phone Number *</label>
+          <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Phone Number *</label>
           <input required className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
             placeholder="07700 000000" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
         </div>
       </div>
       <div>
-        <label className="block text-xs font-semibold mb-1" style={{ color: "#c8e6a0" }}>Property Address *</label>
+        <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Property Address *</label>
         <input required className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
           placeholder="Full address including postcode" value={form.address} onChange={e => setForm({ ...form, address: e.target.value })} />
       </div>
       <div>
-        <label className="block text-xs font-semibold mb-1" style={{ color: "#c8e6a0" }}>Describe the Emergency *</label>
+        <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Describe the Emergency *</label>
         <textarea required rows={4} className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
           placeholder="Describe what's happening..." value={form.issue} onChange={e => setForm({ ...form, issue: e.target.value })} />
       </div>
@@ -69,7 +69,7 @@ export default function Emergency() {
             <h1 className="text-5xl md:text-6xl font-extrabold mb-6" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#fff" }}>
               24/7 <span style={{ color: "#D4A017" }}>EMERGENCY</span><br />CALL OUT
             </h1>
-            <p className="text-base leading-relaxed mb-8" style={{ color: "#a8c88a" }}>
+            <p className="text-base leading-relaxed mb-8" style={{ color: "#9dc46b" }}>
               Maintenance emergencies don't wait for office hours. Our team is available around the clock, every day of the year — including weekends and bank holidays.
             </p>
             <a href="tel:+441234567890"
@@ -77,7 +77,7 @@ export default function Emergency() {
               style={{ background: "#D4A017", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.05em" }}>
               <Phone size={24} /> CALL 01234 567 890
             </a>
-            <div className="flex items-center gap-2 mt-4 text-sm" style={{ color: "#a8c88a" }}>
+            <div className="flex items-center gap-2 mt-4 text-sm" style={{ color: "#9dc46b" }}>
               <Clock size={14} /> Average response time: under 1 hour
             </div>
           </div>
@@ -92,17 +92,17 @@ export default function Emergency() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>
-              EMERGENCY <span style={{ color: "#5B9E1F" }}>SITUATIONS</span> WE COVER
+              EMERGENCY <span style={{ color: "#77A734" }}>SITUATIONS</span> WE COVER
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {emergencies.map((e, i) => (
-              <div key={i} className="rounded-2xl p-6" style={{ background: "#f7fdf2", border: "1.5px solid #e8f5d8" }}>
+              <div key={i} className="rounded-2xl p-6" style={{ background: "#f0fbea", border: "1.5px solid #dff0c0" }}>
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "#fff3cd", color: "#D4A017" }}>
                   {e.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>{e.title}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: "#5a7a3a" }}>{e.desc}</p>
+                <p className="text-sm leading-relaxed" style={{ color: "#4a6a2a" }}>{e.desc}</p>
               </div>
             ))}
           </div>
@@ -117,7 +117,7 @@ export default function Emergency() {
               <h2 className="text-4xl font-extrabold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#fff" }}>
                 SUBMIT AN <span style={{ color: "#D4A017" }}>EMERGENCY REQUEST</span>
               </h2>
-              <p className="text-base mb-8" style={{ color: "#a8c88a" }}>
+              <p className="text-base mb-8" style={{ color: "#9dc46b" }}>
                 Fill in the form and we'll call you back within 15 minutes. For the fastest response, please call us directly.
               </p>
               <div className="space-y-4">
@@ -128,13 +128,13 @@ export default function Emergency() {
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-4 p-4 rounded-xl" style={{ background: "rgba(255,255,255,0.05)" }}>
                     <div className="w-2 h-2 rounded-full" style={{ background: "#D4A017" }} />
-                    <span className="text-sm" style={{ color: "#a8c88a" }}>{item.label}:</span>
+                    <span className="text-sm" style={{ color: "#9dc46b" }}>{item.label}:</span>
                     <span className="font-bold text-sm" style={{ color: "#fff" }}>{item.val}</span>
                   </div>
                 ))}
               </div>
               <div className="mt-8 flex justify-center">
-                <DrainageSVG size={160} color="#5B9E1F" />
+                <DrainageSVG size={160} color="#77A734" />
               </div>
             </div>
             <div className="rounded-2xl p-8" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)" }}>

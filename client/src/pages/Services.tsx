@@ -10,7 +10,7 @@ const services = [
     title: "Plumbing",
     subtitle: "Full-Scope Plumbing Solutions",
     svg: <PlumbingSVG size={180} />,
-    color: "#5B9E1F",
+    color: "#77A734",
     desc: "We cover all aspects of plumbing from tap changes to new radiator installation. Whether you need a small repair or a full installation, our qualified plumbers deliver quality workmanship every time.",
     features: [
       "Tap repairs and replacements",
@@ -30,7 +30,7 @@ const services = [
     title: "Drainage",
     subtitle: "Drainage Clearance & CCTV Surveys",
     svg: <DrainageSVG size={180} />,
-    color: "#5B9E1F",
+    color: "#77A734",
     desc: "From a simple blocked sink to a full drainage CCTV survey, we've got you covered. We use the latest equipment to diagnose and resolve drainage issues quickly and efficiently.",
     features: [
       "Blocked drain clearance from £60+VAT",
@@ -50,7 +50,7 @@ const services = [
     title: "CCTV & Door Entry",
     subtitle: "Security & Access Control Systems",
     svg: <CCTVSvg size={180} />,
-    color: "#5B9E1F",
+    color: "#77A734",
     desc: "Protect your property with our professional CCTV and door entry system installations. We supply and install systems for residential properties, commercial buildings, and schools.",
     features: [
       "CCTV system design and installation",
@@ -110,7 +110,7 @@ const services = [
     title: "General Maintenance",
     subtitle: "The Maintenance Umbrella",
     svg: <WrenchSVG size={180} />,
-    color: "#5B9E1F",
+    color: "#77A734",
     desc: "Beyond our specialist services, RGS can cover all aspects of building maintenance. If you can't find what you need on our website, contact us — our team will be happy to help.",
     features: [
       "General building repairs",
@@ -132,30 +132,30 @@ function QuoteFormInline() {
   const [sent, setSent] = useState(false);
   if (sent) return (
     <div className="text-center py-10">
-      <CheckCircle size={48} className="mx-auto mb-3" style={{ color: "#5B9E1F" }} />
+      <CheckCircle size={48} className="mx-auto mb-3" style={{ color: "#77A734" }} />
       <h3 className="text-2xl font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#fff" }}>Quote Request Sent!</h3>
-      <p className="mt-2" style={{ color: "#c8e6a0" }}>We'll be in touch within 2 hours.</p>
+      <p className="mt-2" style={{ color: "#b8d880" }}>We'll be in touch within 2 hours.</p>
     </div>
   );
   return (
     <form onSubmit={e => { e.preventDefault(); setSent(true); }} className="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label className="block text-xs font-semibold mb-1" style={{ color: "#c8e6a0" }}>Full Name *</label>
+        <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Full Name *</label>
         <input required className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
           placeholder="Your name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
       </div>
       <div>
-        <label className="block text-xs font-semibold mb-1" style={{ color: "#c8e6a0" }}>Phone *</label>
+        <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Phone *</label>
         <input required className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
           placeholder="07700 000000" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
       </div>
       <div>
-        <label className="block text-xs font-semibold mb-1" style={{ color: "#c8e6a0" }}>Email</label>
+        <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Email</label>
         <input type="email" className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
           placeholder="email@example.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
       </div>
       <div>
-        <label className="block text-xs font-semibold mb-1" style={{ color: "#c8e6a0" }}>Service Required</label>
+        <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Service Required</label>
         <select className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
           value={form.service} onChange={e => setForm({ ...form, service: e.target.value })}>
           <option value="" style={{ color: "#1a2e0a" }}>Select service...</option>
@@ -163,7 +163,7 @@ function QuoteFormInline() {
         </select>
       </div>
       <div className="md:col-span-2">
-        <label className="block text-xs font-semibold mb-1" style={{ color: "#c8e6a0" }}>Details</label>
+        <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Details</label>
         <textarea rows={3} className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
           placeholder="Describe your requirements..." value={form.details} onChange={e => setForm({ ...form, details: e.target.value })} />
       </div>
@@ -181,15 +181,15 @@ export default function Services() {
   return (
     <div className="pt-24 md:pt-28">
       {/* Hero */}
-      <section className="py-16" style={{ background: "linear-gradient(135deg, #eef7e6 0%, #d4edba 100%)" }}>
+      <section className="py-16" style={{ background: "linear-gradient(135deg, #e8f5d8 0%, #c8e49a 100%)" }}>
         <div className="container text-center">
-          <div className="inline-block text-xs font-bold px-4 py-1.5 rounded-full mb-4" style={{ background: "#fff", color: "#5B9E1F" }}>
+          <div className="inline-block text-xs font-bold px-4 py-1.5 rounded-full mb-4" style={{ background: "#fff", color: "#77A734" }}>
             WHAT WE OFFER
           </div>
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>
-            OUR <span style={{ color: "#5B9E1F" }}>SERVICES</span>
+            OUR <span style={{ color: "#77A734" }}>SERVICES</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-base" style={{ color: "#4a6a2a" }}>
+          <p className="max-w-2xl mx-auto text-base" style={{ color: "#3d5a1a" }}>
             Specialist maintenance services for residential, commercial and educational properties across London and Essex. Planned, reactive, and emergency cover available.
           </p>
         </div>
@@ -215,14 +215,14 @@ export default function Services() {
               {/* Content side */}
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
                 <div className="text-xs font-bold px-3 py-1 rounded-full inline-block mb-3"
-                  style={{ background: "#eef7e6", color: svc.color }}>
+                  style={{ background: "#e8f5d8", color: svc.color }}>
                   {svc.subtitle}
                 </div>
                 <h2 className="text-4xl md:text-5xl font-extrabold mb-4"
                   style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>
                   {svc.title}
                 </h2>
-                <p className="text-base leading-relaxed mb-6" style={{ color: "#5a7a3a" }}>{svc.desc}</p>
+                <p className="text-base leading-relaxed mb-6" style={{ color: "#4a6a2a" }}>{svc.desc}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
                   {svc.features.map((f, j) => (
                     <div key={j} className="flex items-center gap-2 text-sm" style={{ color: "#2d4a1a" }}>
@@ -257,7 +257,7 @@ export default function Services() {
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#fff" }}>
               GET YOUR <span style={{ color: "#D4A017" }}>FREE QUOTE</span> TODAY
             </h2>
-            <p className="text-base" style={{ color: "#a8c88a" }}>
+            <p className="text-base" style={{ color: "#9dc46b" }}>
               No obligation. Competitive pricing. Fast response across London and Essex.
             </p>
           </div>

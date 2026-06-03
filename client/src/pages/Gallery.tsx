@@ -19,15 +19,15 @@ export default function Gallery() {
   return (
     <div className="pt-24 md:pt-28">
       {/* Hero */}
-      <section className="py-16" style={{ background: "linear-gradient(135deg, #eef7e6 0%, #d4edba 100%)" }}>
+      <section className="py-16" style={{ background: "linear-gradient(135deg, #e8f5d8 0%, #c8e49a 100%)" }}>
         <div className="container text-center">
-          <div className="inline-block text-xs font-bold px-4 py-1.5 rounded-full mb-4" style={{ background: "#fff", color: "#5B9E1F" }}>
+          <div className="inline-block text-xs font-bold px-4 py-1.5 rounded-full mb-4" style={{ background: "#fff", color: "#77A734" }}>
             OUR WORK
           </div>
           <h1 className="text-5xl md:text-6xl font-extrabold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>
-            PROJECT <span style={{ color: "#5B9E1F" }}>GALLERY</span>
+            PROJECT <span style={{ color: "#77A734" }}>GALLERY</span>
           </h1>
-          <p className="max-w-xl mx-auto text-base" style={{ color: "#4a6a2a" }}>
+          <p className="max-w-xl mx-auto text-base" style={{ color: "#3d5a1a" }}>
             A selection of recent projects completed by the RGS team across London and Essex.
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function Gallery() {
           <div className="flex flex-wrap gap-3 justify-center mb-12">
             {categories.map((cat) => (
               <button key={cat} className="px-5 py-2 rounded-full text-sm font-semibold transition-all hover:scale-105"
-                style={{ background: cat === "All" ? "#5B9E1F" : "#eef7e6", color: cat === "All" ? "#fff" : "#5B9E1F", border: "1.5px solid #c8e6a0" }}>
+                style={{ background: cat === "All" ? "#77A734" : "#e8f5d8", color: cat === "All" ? "#fff" : "#77A734", border: "1.5px solid #b8d880" }}>
                 {cat}
               </button>
             ))}
@@ -49,30 +49,30 @@ export default function Gallery() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {galleryItems.map((item, i) => (
               <div key={i} className="group rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
-                style={{ background: "#f7fdf2", border: "1.5px solid #e8f5d8" }}>
+                style={{ background: "#f0fbea", border: "1.5px solid #dff0c0" }}>
                 <div className="flex items-center justify-center py-10 relative overflow-hidden"
-                  style={{ background: "linear-gradient(135deg, #eef7e6, #d4edba)" }}>
+                  style={{ background: "linear-gradient(135deg, #e8f5d8, #c8e49a)" }}>
                   <div className="group-hover:scale-110 transition-transform duration-300">
                     {item.svg}
                   </div>
                   <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-xs font-bold"
-                    style={{ background: "#5B9E1F", color: "#fff" }}>
+                    style={{ background: "#77A734", color: "#fff" }}>
                     {item.cat}
                   </div>
                 </div>
                 <div className="p-5">
                   <h3 className="text-lg font-bold mb-1" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>{item.title}</h3>
-                  <p className="text-sm" style={{ color: "#5a7a3a" }}>{item.desc}</p>
+                  <p className="text-sm" style={{ color: "#4a6a2a" }}>{item.desc}</p>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="text-center mt-12 p-8 rounded-2xl" style={{ background: "#eef7e6", border: "1.5px dashed #c8e6a0" }}>
-            <p className="text-base font-semibold mb-2" style={{ color: "#5B9E1F", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.2rem" }}>
+          <div className="text-center mt-12 p-8 rounded-2xl" style={{ background: "#e8f5d8", border: "1.5px dashed #b8d880" }}>
+            <p className="text-base font-semibold mb-2" style={{ color: "#77A734", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.2rem" }}>
               MORE PHOTOS COMING SOON
             </p>
-            <p className="text-sm" style={{ color: "#5a7a3a" }}>We're constantly updating our gallery with new projects. Check back regularly!</p>
+            <p className="text-sm" style={{ color: "#4a6a2a" }}>We're constantly updating our gallery with new projects. Check back regularly!</p>
           </div>
         </div>
       </section>

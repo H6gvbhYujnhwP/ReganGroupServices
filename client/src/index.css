@@ -1,5 +1,5 @@
 /* RGS Website — Industrial Precision Meets British Craft
-   Palette: White #FFFFFF | RGS Green #5B9E1F | Amber/Gold #D4A017
+   Palette: White #FFFFFF | RGS Green #77A734 | Amber/Gold #D4A017
    Typography: Barlow Condensed (headings) + DM Sans (body)
 */
 
@@ -32,7 +32,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-rgs-green: #5B9E1F;
+  --color-rgs-green: #77A734;
   --color-rgs-amber: #D4A017;
   --color-rgs-dark: #1a2e0a;
 }
@@ -45,7 +45,7 @@
   --card-foreground: oklch(0.18 0.02 145);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.18 0.02 145);
-  --primary: oklch(0.58 0.18 135);
+  --primary: oklch(0.67 0.152 129.4);
   --primary-foreground: oklch(1 0 0);
   --secondary: oklch(0.96 0.01 135);
   --secondary-foreground: oklch(0.3 0.08 135);
@@ -57,10 +57,10 @@
   --destructive-foreground: oklch(0.985 0 0);
   --border: oklch(0.9 0.01 135);
   --input: oklch(0.93 0.01 135);
-  --ring: oklch(0.58 0.18 135);
+  --ring: oklch(0.67 0.152 129.4);
   --sidebar: oklch(0.98 0.005 135);
   --sidebar-foreground: oklch(0.18 0.02 145);
-  --sidebar-primary: oklch(0.58 0.18 135);
+  --sidebar-primary: oklch(0.67 0.152 129.4);
   --sidebar-primary-foreground: oklch(1 0 0);
   --sidebar-accent: oklch(0.96 0.01 135);
   --sidebar-accent-foreground: oklch(0.18 0.02 145);
@@ -127,13 +127,13 @@
 }
 
 /* RGS Custom Utilities */
-.rgs-green { color: #5B9E1F; }
+.rgs-green { color: #77A734; }
 .rgs-amber { color: #D4A017; }
-.bg-rgs-green { background-color: #5B9E1F; }
-.bg-rgs-green-light { background-color: #eef7e6; }
+.bg-rgs-green { background-color: #77A734; }
+.bg-rgs-green-light { background-color: #e8f5d8; }
 .bg-rgs-amber { background-color: #D4A017; }
 .bg-rgs-dark { background-color: #1a2e0a; }
-.border-rgs-green { border-color: #5B9E1F; }
+.border-rgs-green { border-color: #77A734; }
 .border-rgs-amber { border-color: #D4A017; }
 
 /* SVG dot animation */

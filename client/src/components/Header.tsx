@@ -31,7 +31,7 @@ export default function Header() {
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{
         background: "#fff",
-        boxShadow: scrolled ? "0 2px 24px rgba(91,158,31,0.10)" : "0 1px 0 #e8f5d8",
+        boxShadow: scrolled ? "0 2px 24px rgba(91,158,31,0.10)" : "0 1px 0 #dff0c0",
       }}
     >
       <div className="container flex items-center justify-between h-24 md:h-28">
@@ -45,7 +45,7 @@ export default function Header() {
           <div className="hidden sm:block">
             <div
               className="text-lg font-bold leading-tight"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#5B9E1F", letterSpacing: "0.05em" }}
+              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#77A734", letterSpacing: "0.05em" }}
             >
               REGAN GROUP
             </div>
@@ -67,8 +67,8 @@ export default function Header() {
               className="px-4 py-2 text-sm font-semibold transition-all duration-200 rounded-md relative"
               style={{
                 fontFamily: "'DM Sans', sans-serif",
-                color: location === link.href ? "#5B9E1F" : "#2d4a1a",
-                background: location === link.href ? "#eef7e6" : "transparent",
+                color: location === link.href ? "#77A734" : "#2d4a1a",
+                background: location === link.href ? "#e8f5d8" : "transparent",
               }}
             >
               {link.label}
@@ -89,7 +89,7 @@ export default function Header() {
           <a
             href="tel:+441234567890"
             className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:scale-105 active:scale-95"
-            style={{ background: "#5B9E1F", color: "#fff", fontFamily: "'DM Sans', sans-serif" }}
+            style={{ background: "#77A734", color: "#fff", fontFamily: "'DM Sans', sans-serif" }}
           >
             <Phone size={15} />
             Call Us
@@ -103,7 +103,7 @@ export default function Header() {
           </Link>
           <button
             className="lg:hidden p-2 rounded-lg"
-            style={{ color: "#5B9E1F" }}
+            style={{ color: "#77A734" }}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -116,7 +116,7 @@ export default function Header() {
       {mobileOpen && (
         <div
           className="lg:hidden border-t"
-          style={{ background: "#fff", borderColor: "#e8f5d8" }}
+          style={{ background: "#fff", borderColor: "#dff0c0" }}
         >
           <div className="container py-4 flex flex-col gap-1">
             {navLinks.map((link) => (
@@ -126,8 +126,8 @@ export default function Header() {
                 className="px-4 py-3 rounded-lg font-semibold text-sm"
                 style={{
                   fontFamily: "'DM Sans', sans-serif",
-                  color: location === link.href ? "#5B9E1F" : "#2d4a1a",
-                  background: location === link.href ? "#eef7e6" : "transparent",
+                  color: location === link.href ? "#77A734" : "#2d4a1a",
+                  background: location === link.href ? "#e8f5d8" : "transparent",
                 }}
                 onClick={() => setMobileOpen(false)}
               >
@@ -146,7 +146,7 @@ export default function Header() {
               <a
                 href="tel:+441234567890"
                 className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg font-semibold text-sm"
-                style={{ background: "#5B9E1F", color: "#fff" }}
+                style={{ background: "#77A734", color: "#fff" }}
               >
                 <Phone size={15} /> Call Us
               </a>
