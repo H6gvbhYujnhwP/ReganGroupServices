@@ -33,7 +33,7 @@ export default function Footer() {
           <div className="flex items-center gap-3 mb-4">
             <img src={RGS_LOGO} alt="RGS Logo" className="h-16 w-auto object-contain" />
           </div>
-          <p className="text-sm leading-relaxed" style={{ color: "#9dc46b" }}>
+          <p className="text-sm leading-relaxed" style={{ color: "#ffffff" }}>
             Delivering specialised maintenance services with unrivalled customer service across London and Essex.
           </p>
           <div className="mt-4 flex gap-3">
@@ -56,7 +56,7 @@ export default function Footer() {
           <ul className="space-y-2">
             {["Plumbing", "Drainage & CCTV", "Door Entry Systems", "Service Packages", "Emergency Call Out", "Planned Maintenance"].map((s) => (
               <li key={s}>
-                <Link href="/services" className="flex items-center gap-2 text-sm transition-colors hover:text-white" style={{ color: "#9dc46b" }}>
+                <Link href="/services" className="flex items-center gap-2 text-sm transition-colors hover:text-white" style={{ color: "#ffffff" }}>
                   <ChevronRight size={14} style={{ color: "#D4A017" }} /> {s}
                 </Link>
               </li>
@@ -77,7 +77,7 @@ export default function Footer() {
               { href: "/contact", label: "Contact Us" },
             ].map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className="flex items-center gap-2 text-sm transition-colors hover:text-white" style={{ color: "#9dc46b" }}>
+                <Link href={l.href} className="flex items-center gap-2 text-sm transition-colors hover:text-white" style={{ color: "#ffffff" }}>
                   <ChevronRight size={14} style={{ color: "#D4A017" }} /> {l.label}
                 </Link>
               </li>
