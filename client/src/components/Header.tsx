@@ -42,20 +42,6 @@ export default function Header() {
             alt="RGS Logo"
             className="h-20 md:h-24 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
           />
-          <div className="hidden sm:block">
-            <div
-              className="text-lg font-bold leading-tight"
-              style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#77A734", letterSpacing: "0.05em" }}
-            >
-              REGAN GROUP
-            </div>
-            <div
-              className="text-xs font-semibold tracking-widest"
-              style={{ color: "#D4A017", fontFamily: "'DM Sans', sans-serif" }}
-            >
-              SERVICES LTD
-            </div>
-          </div>
         </Link>
 
         {/* Desktop Nav */}

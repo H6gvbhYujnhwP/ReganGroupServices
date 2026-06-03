@@ -31,11 +31,7 @@ export default function Footer() {
         {/* Brand */}
         <div>
           <div className="flex items-center gap-3 mb-4">
-            <img src={RGS_LOGO} alt="RGS Logo" className="h-12 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
-            <div>
-              <div className="font-bold text-lg" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#77A734" }}>REGAN GROUP</div>
-              <div className="text-xs tracking-widest" style={{ color: "#D4A017" }}>SERVICES LTD</div>
-            </div>
+            <img src={RGS_LOGO} alt="RGS Logo" className="h-16 w-auto object-contain" />
           </div>
           <p className="text-sm leading-relaxed" style={{ color: "#9dc46b" }}>
             Delivering specialised maintenance services with unrivalled customer service across London and Essex.
