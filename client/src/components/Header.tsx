@@ -71,7 +71,15 @@ export default function Header() {
         </nav>
 
         {/* CTA + Mobile Toggle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
+          {/* Head Office number */}
+          <a
+            href="tel:+441234567890"
+            className="hidden md:flex flex-col items-start leading-tight"
+          >
+            <span className="text-xs font-bold" style={{ color: "#77A734", fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.04em" }}>HEAD OFFICE</span>
+            <span className="text-sm font-bold" style={{ color: "#77A734", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.05rem", letterSpacing: "0.03em" }}>01234 567 890</span>
+          </a>
           <a
             href="tel:+441234567890"
             className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:scale-105 active:scale-95"
