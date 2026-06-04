@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer style={{ background: "#1a2e0a", color: "#fff" }}>
       {/* Emergency Banner */}
-      <div style={{ background: "#D4A017" }} className="py-4">
+      <div style={{ background: "#E8F5D8" }} className="py-4">
         <div className="container flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <Clock size={20} style={{ color: "#1a2e0a" }} />
@@ -19,7 +19,7 @@ export default function Footer() {
           <a
             href="tel:+441234567890"
             className="flex items-center gap-2 px-6 py-2 rounded-lg font-bold text-sm transition-all hover:scale-105"
-            style={{ background: "#1a2e0a", color: "#D4A017", fontFamily: "'DM Sans', sans-serif" }}
+            style={{ background: "#1a2e0a", color: "#E8F5D8", fontFamily: "'DM Sans', sans-serif" }}
           >
             <Phone size={16} /> Call Now
           </a>
@@ -57,7 +57,7 @@ export default function Footer() {
             {["Plumbing", "Drainage & CCTV", "Door Entry Systems", "Service Packages", "Emergency Call Out", "Planned Maintenance"].map((s) => (
               <li key={s}>
                 <Link href="/services" className="flex items-center gap-2 text-sm transition-colors hover:text-white" style={{ color: "#ffffff" }}>
-                  <ChevronRight size={14} style={{ color: "#D4A017" }} /> {s}
+                  <ChevronRight size={14} style={{ color: "#E8F5D8" }} /> {s}
                 </Link>
               </li>
             ))}
@@ -78,7 +78,7 @@ export default function Footer() {
             ].map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="flex items-center gap-2 text-sm transition-colors hover:text-white" style={{ color: "#ffffff" }}>
-                  <ChevronRight size={14} style={{ color: "#D4A017" }} /> {l.label}
+                  <ChevronRight size={14} style={{ color: "#E8F5D8" }} /> {l.label}
                 </Link>
               </li>
             ))}
@@ -90,7 +90,7 @@ export default function Footer() {
           <h4 className="font-bold mb-4 text-lg" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#77A734" }}>CONTACT US</h4>
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
-              <Phone size={16} style={{ color: "#D4A017", marginTop: 2 }} />
+              <Phone size={16} style={{ color: "#E8F5D8", marginTop: 2 }} />
               <div>
                 <div className="text-xs" style={{ color: "#9dc46b" }}>Phone</div>
                 <a href="tel:+441234567890" className="text-sm font-semibold hover:text-white transition-colors" style={{ color: "#fff" }}>
@@ -99,7 +99,7 @@ export default function Footer() {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <Mail size={16} style={{ color: "#D4A017", marginTop: 2 }} />
+              <Mail size={16} style={{ color: "#E8F5D8", marginTop: 2 }} />
               <div>
                 <div className="text-xs" style={{ color: "#9dc46b" }}>Email</div>
                 <a href="mailto:info@regangroupservices.com" className="text-sm font-semibold hover:text-white transition-colors" style={{ color: "#fff" }}>
@@ -108,14 +108,14 @@ export default function Footer() {
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <MapPin size={16} style={{ color: "#D4A017", marginTop: 2 }} />
+              <MapPin size={16} style={{ color: "#E8F5D8", marginTop: 2 }} />
               <div>
                 <div className="text-xs" style={{ color: "#9dc46b" }}>Areas Served</div>
                 <div className="text-sm font-semibold" style={{ color: "#fff" }}>London & Essex</div>
               </div>
             </li>
             <li className="flex items-start gap-3">
-              <Clock size={16} style={{ color: "#D4A017", marginTop: 2 }} />
+              <Clock size={16} style={{ color: "#E8F5D8", marginTop: 2 }} />
               <div>
                 <div className="text-xs" style={{ color: "#9dc46b" }}>Emergency</div>
                 <div className="text-sm font-semibold" style={{ color: "#fff" }}>24/7 Available</div>

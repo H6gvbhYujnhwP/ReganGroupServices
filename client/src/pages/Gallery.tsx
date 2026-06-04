@@ -11,7 +11,7 @@ const galleryItems = [
   { title: "Blockage Clearance", cat: "Drainage", svg: <DrainageSVG size={100} />, desc: "Severe blockage cleared using high-pressure jetting" },
   { title: "Service Package", cat: "Commercial", svg: <ShieldSVG size={100} />, desc: "Planned maintenance contract for a property portfolio" },
   { title: "Door Entry System", cat: "CCTV", svg: <CCTVSvg size={100} />, desc: "Video intercom and access control for a residential block" },
-  { title: "Emergency Repair", cat: "Residential", svg: <EmergencySVG size={100} color="#D4A017" />, desc: "Burst pipe emergency repair completed within 45 minutes" },
+  { title: "Emergency Repair", cat: "Residential", svg: <EmergencySVG size={100} color="#E8F5D8" />, desc: "Burst pipe emergency repair completed within 45 minutes" },
   { title: "Bathroom Renovation", cat: "Residential", svg: <PlumbingSVG size={100} />, desc: "Full bathroom plumbing for a residential property" },
 ];
 

@@ -72,7 +72,7 @@ export default function About() {
               </p>
             </div>
             <div className="rounded-2xl p-8" style={{ background: "#f0fbea", border: "1.5px solid #dff0c0" }}>
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "#D4A017", color: "#fff" }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4" style={{ background: "#E8F5D8", color: "#2d4a1a" }}>
                 <Award size={24} />
               </div>
               <h3 className="text-2xl font-bold mb-3" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>30+ Years of Expertise</h3>

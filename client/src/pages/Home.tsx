@@ -168,7 +168,7 @@ export default function Home() {
               <span style={{ color: "#77A734" }}>MAINTENANCE</span><br />
               <span className="relative">
                 SERVICES
-                <span className="absolute -bottom-1 left-0 w-2/3 h-1 rounded" style={{ background: "#D4A017" }} />
+                <span className="absolute -bottom-1 left-0 w-2/3 h-1 rounded" style={{ background: "#E8F5D8" }} />
               </span>
             </h1>
             <p className="text-lg leading-relaxed mb-8" style={{ color: "#3d5a1a", fontFamily: "'DM Sans', sans-serif" }}>
@@ -182,7 +182,7 @@ export default function Home() {
               </Link>
               <Link href="/emergency"
                 className="flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-base transition-all hover:scale-105 active:scale-95 border-2"
-                style={{ borderColor: "#D4A017", color: "#D4A017", background: "transparent", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}>
+                style={{ borderColor: "#E8F5D8", color: "#E8F5D8", background: "transparent", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}>
                 <Phone size={18} /> EMERGENCY
               </Link>
             </div>
@@ -223,7 +223,7 @@ export default function Home() {
                 <circle cx="200" cy="200" r="160" stroke="#77A734" strokeWidth="1.5" fill="none" strokeDasharray="8 6" opacity="0.3">
                   <animateTransform attributeName="transform" type="rotate" from="0 200 200" to="360 200 200" dur="20s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="200" cy="200" r="120" stroke="#D4A017" strokeWidth="1" fill="none" strokeDasharray="4 8" opacity="0.2">
+                <circle cx="200" cy="200" r="120" stroke="#E8F5D8" strokeWidth="1" fill="none" strokeDasharray="4 8" opacity="0.2">
                   <animateTransform attributeName="transform" type="rotate" from="360 200 200" to="0 200 200" dur="15s" repeatCount="indefinite" />
                 </circle>
               </svg>
@@ -309,7 +309,7 @@ export default function Home() {
               <div className="relative w-80 h-80">
                 <WrenchSVG size={320} color="#77A734" />
                 <div className="absolute top-4 right-4">
-                  <ShieldSVG size={100} color="#D4A017" />
+                  <ShieldSVG size={100} color="#E8F5D8" />
                 </div>
               </div>
             </div>
@@ -344,7 +344,7 @@ export default function Home() {
       <section className="py-16" style={{ background: "#1a2e0a" }}>
         <div className="container flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="flex items-center gap-6">
-            <EmergencySVG size={80} color="#D4A017" />
+            <EmergencySVG size={80} color="#E8F5D8" />
             <div>
               <h2 className="text-3xl md:text-4xl font-extrabold" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#fff" }}>
                 24/7 EMERGENCY CALL OUT
@@ -357,7 +357,7 @@ export default function Home() {
           <div className="flex gap-4">
             <a href="tel:+441234567890"
               className="flex items-center gap-2 px-8 py-4 rounded-xl font-bold transition-all hover:scale-105"
-              style={{ background: "#D4A017", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}>
+              style={{ background: "#E8F5D8", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}>
               <Phone size={20} /> CALL NOW
             </a>
             <Link href="/emergency"
@@ -433,7 +433,7 @@ export default function Home() {
               <div key={i} className="rounded-2xl p-6" style={{ background: "#fff", border: "1.5px solid #b8d880" }}>
                 <div className="flex gap-1 mb-4">
                   {Array(t.stars).fill(0).map((_, j) => (
-                    <Star key={j} size={16} fill="#D4A017" stroke="none" />
+                    <Star key={j} size={16} fill="#E8F5D8" stroke="none" />
                   ))}
                 </div>
                 <p className="text-sm leading-relaxed mb-4" style={{ color: "#3d5a1a" }}>"{t.text}"</p>

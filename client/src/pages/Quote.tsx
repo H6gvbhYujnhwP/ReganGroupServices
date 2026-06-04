@@ -230,7 +230,7 @@ export default function Quote() {
                   <button onClick={() => { if (form.name && form.phone && form.email) setStep(4); }}
                     disabled={!form.name || !form.phone || !form.email}
                     className="flex-1 py-4 rounded-xl font-bold text-base transition-all hover:scale-[1.02] disabled:opacity-40"
-                    style={{ background: "#D4A017", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}>
+                    style={{ background: "#E8F5D8", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}>
                     SUBMIT QUOTE REQUEST ✓
                   </button>
                 </div>

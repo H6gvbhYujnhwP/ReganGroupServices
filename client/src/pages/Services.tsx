@@ -70,7 +70,7 @@ const services = [
     title: "Service Packages",
     subtitle: "Planned Maintenance Contracts",
     svg: <ShieldSVG size={180} />,
-    color: "#D4A017",
+    color: "#E8F5D8",
     desc: "Our bespoke service packages are designed to give you complete peace of mind. We tailor planned maintenance contracts to suit your property portfolio, budget, and requirements.",
     features: [
       "Annual planned maintenance visits",
@@ -89,8 +89,8 @@ const services = [
     id: "emergency",
     title: "Emergency Call Out",
     subtitle: "24/7 Emergency Response",
-    svg: <EmergencySVG size={180} color="#D4A017" />,
-    color: "#D4A017",
+    svg: <EmergencySVG size={180} color="#E8F5D8" />,
+    color: "#E8F5D8",
     desc: "Maintenance emergencies don't keep office hours. Our 24/7 emergency call out service means help is always available when you need it most — day or night, weekends and bank holidays.",
     features: [
       "Available 24 hours a day, 7 days a week",
@@ -169,7 +169,7 @@ function QuoteFormInline() {
       </div>
       <div className="md:col-span-2">
         <button type="submit" className="w-full py-4 rounded-xl font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98]"
-          style={{ background: "#D4A017", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem", letterSpacing: "0.05em" }}>
+          style={{ background: "#E8F5D8", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem", letterSpacing: "0.05em" }}>
           REQUEST FREE QUOTE →
         </button>
       </div>
@@ -239,7 +239,7 @@ export default function Services() {
                   {svc.id === "emergency" && (
                     <a href="tel:+441234567890"
                       className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm border-2 transition-all hover:scale-105"
-                      style={{ borderColor: "#D4A017", color: "#D4A017", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem" }}>
+                      style={{ borderColor: "#E8F5D8", color: "#E8F5D8", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem" }}>
                       <Phone size={14} /> 01234 567 890
                     </a>
                   )}
@@ -255,7 +255,7 @@ export default function Services() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#fff" }}>
-              GET YOUR <span style={{ color: "#D4A017" }}>FREE QUOTE</span> TODAY
+              GET YOUR <span style={{ color: "#E8F5D8" }}>FREE QUOTE</span> TODAY
             </h2>
             <p className="text-base" style={{ color: "#9dc46b" }}>
               No obligation. Competitive pricing. Fast response across London and Essex.

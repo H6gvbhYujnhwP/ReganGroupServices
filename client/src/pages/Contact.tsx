@@ -90,8 +90,8 @@ export default function Contact() {
               {[
                 { icon: <Phone size={22} />, label: "Phone", val: "01234 567 890", link: "tel:+441234567890", color: "#77A734" },
                 { icon: <Mail size={22} />, label: "Email", val: "info@regangroupservices.com", link: "mailto:info@regangroupservices.com", color: "#77A734" },
-                { icon: <MapPin size={22} />, label: "Areas Served", val: "London & Essex", link: null, color: "#D4A017" },
-                { icon: <Clock size={22} />, label: "Emergency", val: "24/7 Available", link: null, color: "#D4A017" },
+                { icon: <MapPin size={22} />, label: "Areas Served", val: "London & Essex", link: null, color: "#E8F5D8" },
+                { icon: <Clock size={22} />, label: "Emergency", val: "24/7 Available", link: null, color: "#E8F5D8" },
                 { icon: <MessageSquare size={22} />, label: "Office Hours", val: "Mon–Fri 8am–6pm, Sat 9am–4pm", link: null, color: "#77A734" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center gap-4 p-5 rounded-2xl" style={{ background: "#f0fbea", border: "1.5px solid #dff0c0" }}>

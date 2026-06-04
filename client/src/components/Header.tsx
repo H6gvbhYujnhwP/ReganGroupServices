@@ -61,7 +61,7 @@ export default function Header() {
               {link.href === "/emergency" && (
                 <span
                   className="ml-1 text-xs px-1.5 py-0.5 rounded-full font-bold"
-                  style={{ background: "#D4A017", color: "#fff" }}
+                  style={{ background: "#E8F5D8", color: "#2d4a1a" }}
                 >
                   24/7
                 </span>
@@ -91,7 +91,7 @@ export default function Header() {
           <Link
             href="/quote"
             className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 hover:scale-105 active:scale-95"
-            style={{ background: "#D4A017", color: "#fff", fontFamily: "'DM Sans', sans-serif" }}
+            style={{ background: "#E8F5D8", color: "#2d4a1a", fontFamily: "'DM Sans', sans-serif" }}
           >
             Free Quote
           </Link>
@@ -129,7 +129,7 @@ export default function Header() {
                 {link.href === "/emergency" && (
                   <span
                     className="ml-2 text-xs px-1.5 py-0.5 rounded-full font-bold"
-                    style={{ background: "#D4A017", color: "#fff" }}
+                    style={{ background: "#E8F5D8", color: "#2d4a1a" }}
                   >
                     24/7
                   </span>
@@ -147,7 +147,7 @@ export default function Header() {
               <Link
                 href="/quote"
                 className="flex-1 flex items-center justify-center py-3 rounded-lg font-semibold text-sm"
-                style={{ background: "#D4A017", color: "#fff" }}
+                style={{ background: "#E8F5D8", color: "#2d4a1a" }}
                 onClick={() => setMobileOpen(false)}
               >
                 Free Quote

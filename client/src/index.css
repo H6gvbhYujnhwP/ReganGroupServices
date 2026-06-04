@@ -1,5 +1,5 @@
 /* RGS Website — Industrial Precision Meets British Craft
-   Palette: White #FFFFFF | RGS Green #77A734 | Amber/Gold #D4A017
+   Palette: White #FFFFFF | RGS Green #77A734 | Amber/Gold #E8F5D8
    Typography: Barlow Condensed (headings) + DM Sans (body)
 */
 
@@ -33,7 +33,7 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-rgs-green: #77A734;
-  --color-rgs-amber: #D4A017;
+  --color-rgs-amber: #E8F5D8;
   --color-rgs-dark: #1a2e0a;
 }
 
@@ -128,13 +128,13 @@
 
 /* RGS Custom Utilities */
 .rgs-green { color: #77A734; }
-.rgs-amber { color: #D4A017; }
+.rgs-amber { color: #E8F5D8; }
 .bg-rgs-green { background-color: #77A734; }
 .bg-rgs-green-light { background-color: #e8f5d8; }
-.bg-rgs-amber { background-color: #D4A017; }
+.bg-rgs-amber { background-color: #E8F5D8; }
 .bg-rgs-dark { background-color: #1a2e0a; }
 .border-rgs-green { border-color: #77A734; }
-.border-rgs-amber { border-color: #D4A017; }
+.border-rgs-amber { border-color: #E8F5D8; }
 
 /* SVG dot animation */
 @keyframes dotOrbit {
@@ -188,7 +188,7 @@
   left: 0;
   width: 60%;
   height: 3px;
-  background: #D4A017;
+  background: #E8F5D8;
   border-radius: 2px;
 }
 

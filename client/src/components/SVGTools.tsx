@@ -43,7 +43,7 @@ export function WrenchSVG({ className = "", size = 200, color = "#77A734" }: SVG
       />
       {/* Dot trail */}
       <AnimatedDot pathId="wrench-outline" duration={3} delay={0.5} color={color} />
-      <AnimatedDot pathId="wrench-outline" duration={3} delay={1.5} color="#D4A017" />
+      <AnimatedDot pathId="wrench-outline" duration={3} delay={1.5} color="#E8F5D8" />
       {/* Bolt head circles */}
       <circle cx="148" cy="45" r="18" stroke={color} strokeWidth="2.5" fill="none" opacity="0.3" />
       <circle cx="148" cy="45" r="10" stroke={color} strokeWidth="2" fill="none" opacity="0.5" />
@@ -72,7 +72,7 @@ export function PlumbingSVG({ className = "", size = 200, color = "#77A734" }: S
         style={{ animation: "drawPath 2.5s ease forwards 0.2s", "--path-length": "700" } as React.CSSProperties}
       />
       <AnimatedDot pathId="pipe-flow" duration={2.5} delay={0} color={color} />
-      <AnimatedDot pathId="pipe-flow" duration={2.5} delay={1.2} color="#D4A017" />
+      <AnimatedDot pathId="pipe-flow" duration={2.5} delay={1.2} color="#E8F5D8" />
       <AnimatedDot pathId="pipe-flow" duration={2.5} delay={0.6} color={color} />
       {/* Water droplets */}
       {[100, 130, 160].map((x, i) => (
@@ -105,7 +105,7 @@ export function CCTVSvg({ className = "", size = 200, color = "#77A734" }: SVGTo
       />
       <use href="#cctv-mount" stroke={color} strokeWidth="3" fill="none" opacity="0.4" />
       <AnimatedDot pathId="cctv-path" duration={3.5} delay={0.2} color={color} />
-      <AnimatedDot pathId="cctv-path" duration={3.5} delay={1.8} color="#D4A017" />
+      <AnimatedDot pathId="cctv-path" duration={3.5} delay={1.8} color="#E8F5D8" />
       {/* Scan lines */}
       {[85, 100, 115].map((y, i) => (
         <line key={i} x1="35" y1={y} x2="115" y2={y} stroke={color} strokeWidth="1" opacity="0.15" strokeDasharray="4 4" />
@@ -151,7 +151,7 @@ export function DrainageSVG({ className = "", size = 200, color = "#77A734" }: S
       ))}
       {/* Animated dots */}
       <AnimatedDot pathId="drain-outer" duration={4} delay={0} color={color} />
-      <AnimatedDot pathId="drain-outer" duration={4} delay={2} color="#D4A017" />
+      <AnimatedDot pathId="drain-outer" duration={4} delay={2} color="#E8F5D8" />
       <circle cx="100" cy="100" r="8" fill={color} opacity="0.5" />
       <circle cx="100" cy="100" r="4" fill={color} opacity="0.9" />
     </svg>
@@ -174,7 +174,7 @@ export function ShieldSVG({ className = "", size = 200, color = "#77A734" }: SVG
         style={{ animation: "drawPath 2.5s ease forwards 0.2s", "--path-length": "600" } as React.CSSProperties}
       />
       <AnimatedDot pathId="shield-path" duration={4} delay={0.3} color={color} />
-      <AnimatedDot pathId="shield-path" duration={4} delay={2} color="#D4A017" />
+      <AnimatedDot pathId="shield-path" duration={4} delay={2} color="#E8F5D8" />
       {/* Checkmark */}
       <path d="M 70 100 L 90 120 L 130 80" stroke={color} strokeWidth="5" fill="none" strokeLinecap="round" strokeLinejoin="round" opacity="0.7"
         strokeDasharray="100" strokeDashoffset="100"
@@ -185,7 +185,7 @@ export function ShieldSVG({ className = "", size = 200, color = "#77A734" }: SVG
 }
 
 // Emergency / Lightning bolt SVG
-export function EmergencySVG({ className = "", size = 200, color = "#D4A017" }: SVGToolProps) {
+export function EmergencySVG({ className = "", size = 200, color = "#E8F5D8" }: SVGToolProps) {
   return (
     <svg viewBox="0 0 200 200" width={size} height={size} className={className} aria-hidden="true">
       <defs>
