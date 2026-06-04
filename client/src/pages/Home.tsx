@@ -182,7 +182,7 @@ export default function Home() {
               </Link>
               <Link href="/emergency"
                 className="flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-base transition-all hover:scale-105 active:scale-95 border-2"
-                style={{ borderColor: "#E8F5D8", color: "#E8F5D8", background: "transparent", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}>
+                style={{ borderColor: "#77A734", color: "#77A734", background: "transparent", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}>
                 <Phone size={18} /> EMERGENCY
               </Link>
             </div>
