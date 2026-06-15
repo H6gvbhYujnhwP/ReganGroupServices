@@ -2,6 +2,7 @@
 // Brand: #77A734 green, #E8F5D8 light green, white background
 // Uses existing RGS site colour scheme — no changes to other pages
 
+import { useEffect } from "react";
 import { Link } from "wouter";
 import { CheckCircle, AlertTriangle, Clock, Shield, ChevronRight, Phone } from "lucide-react";
 
@@ -44,6 +45,8 @@ const benefits = [
 ];
 
 export default function QuizLanding() {
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "instant" }); }, []);
+
   const firePixel = (event: string) => {
     if (typeof window !== "undefined" && (window as any).fbq) {
       (window as any).fbq("track", event, {

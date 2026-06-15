@@ -1,7 +1,7 @@
 // RGS Pipe Health Quiz — Questions + Lead Capture
 // Brand: #77A734 green, #E8F5D8 light green, white background
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import { useForm, ValidationError } from "@formspree/react";
 import { quizQuestions, calculateResult, QuizAnswers } from "@/lib/quizData";
@@ -25,6 +25,10 @@ export default function QuizQuestions() {
   const [answers, setAnswers] = useState<QuizAnswers>({});
   const [lead, setLead] = useState<LeadForm>({ name: "", email: "", phone: "", propertyType: "" });
   const [formspreeState, handleFormspreeSubmit] = useForm(FORMSPREE_ID);
+
+  // Scroll to top on mount and on every step change
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "instant" }); }, []);
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "instant" }); }, [currentStep]);
 
   const totalSteps = quizQuestions.length + 1; // 8 questions + 1 lead form
   const progress = Math.round((currentStep / totalSteps) * 100);

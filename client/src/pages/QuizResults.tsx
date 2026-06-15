@@ -105,6 +105,8 @@ export default function QuizResults() {
   const [result, setResult] = useState<QuizResult | null>(null);
   const [leadName, setLeadName] = useState<string>("");
 
+  useEffect(() => { window.scrollTo({ top: 0, behavior: "instant" }); }, []);
+
   useEffect(() => {
     const stored = sessionStorage.getItem("rgs_quiz_result");
     const storedLead = sessionStorage.getItem("rgs_quiz_lead");
