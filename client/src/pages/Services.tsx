@@ -1,8 +1,11 @@
 /* RGS Services Page */
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { Link } from "wouter";
 import { CheckCircle, ArrowRight, Phone } from "lucide-react";
+
 import { WrenchSVG, PlumbingSVG, CCTVSvg, DrainageSVG, ShieldSVG, EmergencySVG } from "@/components/SVGTools";
+
+const FORMSPREE_ID = "xrevjlby";
 
 const services = [
   {
@@ -128,9 +131,9 @@ const services = [
 ];
 
 function QuoteFormInline() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", details: "" });
-  const [sent, setSent] = useState(false);
-  if (sent) return (
+  const [state, handleSubmit] = useForm(FORMSPREE_ID);
+
+  if (state.succeeded) return (
     <div className="text-center py-10">
       <CheckCircle size={48} className="mx-auto mb-3" style={{ color: "#77A734" }} />
       <h3 className="text-2xl font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#fff" }}>Quote Request Sent!</h3>
@@ -138,39 +141,41 @@ function QuoteFormInline() {
     </div>
   );
   return (
-    <form onSubmit={e => { e.preventDefault(); setSent(true); }} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <input type="hidden" name="formSource" value="Services Page" />
       <div>
         <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Full Name *</label>
-        <input required className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
-          placeholder="Your name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
+        <input required name="name" className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
+          placeholder="Your name" />
+        <ValidationError field="name" prefix="Name" errors={state.errors} className="text-red-300 text-xs mt-1" />
       </div>
       <div>
         <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Phone *</label>
-        <input required className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
-          placeholder="07700 000000" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
+        <input required name="phone" className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
+          placeholder="07700 000000" />
       </div>
       <div>
         <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Email</label>
-        <input type="email" className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
-          placeholder="email@example.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
+        <input type="email" name="email" className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
+          placeholder="email@example.com" />
+        <ValidationError field="email" prefix="Email" errors={state.errors} className="text-red-300 text-xs mt-1" />
       </div>
       <div>
         <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Service Required</label>
-        <select className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
-          value={form.service} onChange={e => setForm({ ...form, service: e.target.value })}>
+        <select name="service" className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}>
           <option value="" style={{ color: "#1a2e0a" }}>Select service...</option>
           {services.map(s => <option key={s.id} value={s.title} style={{ color: "#1a2e0a" }}>{s.title}</option>)}
         </select>
       </div>
       <div className="md:col-span-2">
         <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Details</label>
-        <textarea rows={3} className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
-          placeholder="Describe your requirements..." value={form.details} onChange={e => setForm({ ...form, details: e.target.value })} />
+        <textarea name="message" rows={3} className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none" style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
+          placeholder="Describe your requirements..." />
       </div>
       <div className="md:col-span-2">
-        <button type="submit" className="w-full py-4 rounded-xl font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98]"
+        <button type="submit" disabled={state.submitting} className="w-full py-4 rounded-xl font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60"
           style={{ background: "#E8F5D8", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem", letterSpacing: "0.05em" }}>
-          REQUEST FREE QUOTE →
+          {state.submitting ? "SENDING..." : "REQUEST FREE QUOTE →"}
         </button>
       </div>
     </form>

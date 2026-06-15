@@ -54,7 +54,7 @@ export default function QuizLanding() {
   };
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="min-h-screen bg-white pt-24 md:pt-28" style={{ fontFamily: "'DM Sans', sans-serif" }}>
 
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: `linear-gradient(135deg, ${DARK_GREEN} 0%, #3d6b20 100%)` }}>

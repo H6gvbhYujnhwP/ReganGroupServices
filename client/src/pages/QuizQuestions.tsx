@@ -1,29 +1,30 @@
-// RGS Pipe Health Quiz — Questions Page
+// RGS Pipe Health Quiz — Questions + Lead Capture
 // Brand: #77A734 green, #E8F5D8 light green, white background
 
 import { useState } from "react";
 import { useLocation } from "wouter";
+import { useForm, ValidationError } from "@formspree/react";
 import { quizQuestions, calculateResult, QuizAnswers } from "@/lib/quizData";
 import { ChevronRight, ChevronLeft, CheckCircle } from "lucide-react";
 
 const BRAND_GREEN = "#77A734";
 const LIGHT_GREEN = "#E8F5D8";
 const DARK_GREEN = "#2d4a1a";
+const FORMSPREE_ID = "xrevjlby";
 
 interface LeadForm {
   name: string;
   email: string;
   phone: string;
   propertyType: string;
-  units: string;
 }
 
 export default function QuizQuestions() {
   const [, setLocation] = useLocation();
   const [currentStep, setCurrentStep] = useState(0); // 0-7 = questions, 8 = lead form
   const [answers, setAnswers] = useState<QuizAnswers>({});
-  const [lead, setLead] = useState<LeadForm>({ name: "", email: "", phone: "", propertyType: "", units: "" });
-  const [submitting, setSubmitting] = useState(false);
+  const [lead, setLead] = useState<LeadForm>({ name: "", email: "", phone: "", propertyType: "" });
+  const [formspreeState, handleFormspreeSubmit] = useForm(FORMSPREE_ID);
 
   const totalSteps = quizQuestions.length + 1; // 8 questions + 1 lead form
   const progress = Math.round((currentStep / totalSteps) * 100);
@@ -41,7 +42,6 @@ export default function QuizQuestions() {
     if (!currentQuestion) return;
     const newAnswers = { ...answers, [currentQuestion.id]: value };
     setAnswers(newAnswers);
-    // Auto-advance after short delay
     setTimeout(() => {
       if (currentStep < quizQuestions.length - 1) {
         setCurrentStep(currentStep + 1);
@@ -58,23 +58,34 @@ export default function QuizQuestions() {
 
   const handleLeadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitting(true);
     firePixel("Lead", { value: 0, currency: "GBP" });
+
     // Store result in sessionStorage for results page
     const result = calculateResult(answers);
     sessionStorage.setItem("rgs_quiz_result", JSON.stringify(result));
     sessionStorage.setItem("rgs_quiz_lead", JSON.stringify(lead));
     sessionStorage.setItem("rgs_quiz_answers", JSON.stringify(answers));
-    setTimeout(() => {
-      setLocation("/quiz/results");
-    }, 600);
+
+    // Submit to Formspree
+    await handleFormspreeSubmit({
+      name: lead.name,
+      email: lead.email,
+      phone: lead.phone,
+      propertyType: lead.propertyType,
+      quizScore: result.score,
+      riskLevel: result.riskLevel,
+      formSource: "Pipe Health Quiz",
+    });
+
+    // Navigate to results regardless of Formspree response
+    setLocation("/quiz/results");
   };
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="min-h-screen bg-white pt-24 md:pt-28" style={{ fontFamily: "'DM Sans', sans-serif" }}>
 
       {/* Progress header */}
-      <div className="sticky top-0 z-10 bg-white border-b shadow-sm">
+      <div className="sticky top-16 z-10 bg-white border-b shadow-sm">
         <div className="container mx-auto px-4 py-3 max-w-2xl">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-semibold" style={{ color: DARK_GREEN }}>
@@ -179,6 +190,7 @@ export default function QuizQuestions() {
                 <label className="block text-sm font-semibold mb-1" style={{ color: DARK_GREEN }}>Full Name *</label>
                 <input
                   type="text"
+                  name="name"
                   required
                   value={lead.name}
                   onChange={(e) => setLead({ ...lead, name: e.target.value })}
@@ -188,11 +200,13 @@ export default function QuizQuestions() {
                   onFocus={(e) => (e.target.style.borderColor = BRAND_GREEN)}
                   onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
                 />
+                <ValidationError field="name" prefix="Name" errors={formspreeState.errors} className="text-red-500 text-xs mt-1" />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-1" style={{ color: DARK_GREEN }}>Email Address *</label>
                 <input
                   type="email"
+                  name="email"
                   required
                   value={lead.email}
                   onChange={(e) => setLead({ ...lead, email: e.target.value })}
@@ -202,11 +216,13 @@ export default function QuizQuestions() {
                   onFocus={(e) => (e.target.style.borderColor = BRAND_GREEN)}
                   onBlur={(e) => (e.target.style.borderColor = "#e5e7eb")}
                 />
+                <ValidationError field="email" prefix="Email" errors={formspreeState.errors} className="text-red-500 text-xs mt-1" />
               </div>
               <div>
                 <label className="block text-sm font-semibold mb-1" style={{ color: DARK_GREEN }}>Phone Number</label>
                 <input
                   type="tel"
+                  name="phone"
                   value={lead.phone}
                   onChange={(e) => setLead({ ...lead, phone: e.target.value })}
                   placeholder="01234 567 890"
@@ -219,6 +235,7 @@ export default function QuizQuestions() {
               <div>
                 <label className="block text-sm font-semibold mb-1" style={{ color: DARK_GREEN }}>Property Type</label>
                 <select
+                  name="propertyType"
                   value={lead.propertyType}
                   onChange={(e) => setLead({ ...lead, propertyType: e.target.value })}
                   className="w-full px-4 py-3 rounded-xl border-2 outline-none transition-all bg-white"
@@ -239,11 +256,11 @@ export default function QuizQuestions() {
               <div className="pt-2">
                 <button
                   type="submit"
-                  disabled={submitting}
+                  disabled={formspreeState.submitting}
                   className="w-full py-4 rounded-xl font-bold text-lg transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70"
                   style={{ background: BRAND_GREEN, color: "white", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.2rem", letterSpacing: "0.05em" }}
                 >
-                  {submitting ? "CALCULATING YOUR SCORE..." : "SEE MY PIPE HEALTH SCORE →"}
+                  {formspreeState.submitting ? "CALCULATING YOUR SCORE..." : "SEE MY PIPE HEALTH SCORE →"}
                 </button>
                 <p className="text-xs text-gray-400 text-center mt-3">
                   By submitting you agree to be contacted by RGS. We never share your data with third parties.

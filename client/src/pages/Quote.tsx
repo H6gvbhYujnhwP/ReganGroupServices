@@ -1,7 +1,9 @@
 /* RGS Quote Page — comprehensive multi-step quote form */
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
 import { ShieldSVG } from "@/components/SVGTools";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xrevjlby";
 
 const services = ["Plumbing", "Drainage", "CCTV Installation", "Door Entry System", "Service Package", "Emergency Call Out", "General Maintenance", "Other"];
 const propertyTypes = ["Residential Home", "Flat / Apartment", "Commercial Office", "Retail Unit", "School / Education", "Industrial / Warehouse", "Block of Flats", "Other"];
@@ -31,6 +33,32 @@ export default function Quote() {
       ...f,
       services: f.services.includes(s) ? f.services.filter(x => x !== s) : [...f.services, s],
     }));
+  };
+
+  const [submitting, setSubmitting] = useState(false);
+
+  const submitToFormspree = async () => {
+    try {
+      await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          services: form.services.join(", "),
+          propertyType: form.propertyType,
+          urgency: form.urgency,
+          description: form.description,
+          address: form.address,
+          postcode: form.postcode,
+          bestTime: form.bestTime,
+          formSource: "Quote Page",
+        }),
+      });
+    } catch (_) {
+      // proceed regardless
+    }
   };
 
   if (step === 4) return (
@@ -227,11 +255,19 @@ export default function Quote() {
                     style={{ borderColor: "#77A734", color: "#77A734", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem" }}>
                     <ArrowLeft size={16} className="inline mr-2" /> BACK
                   </button>
-                  <button onClick={() => { if (form.name && form.phone && form.email) setStep(4); }}
-                    disabled={!form.name || !form.phone || !form.email}
+                  <button
+                    onClick={async () => {
+                      if (form.name && form.phone && form.email) {
+                        setSubmitting(true);
+                        await submitToFormspree();
+                        setSubmitting(false);
+                        setStep(4);
+                      }
+                    }}
+                    disabled={!form.name || !form.phone || !form.email || submitting}
                     className="flex-1 py-4 rounded-xl font-bold text-base transition-all hover:scale-[1.02] disabled:opacity-40"
                     style={{ background: "#E8F5D8", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}>
-                    SUBMIT QUOTE REQUEST ✓
+                    {submitting ? "SENDING..." : "SUBMIT QUOTE REQUEST ✓"}
                   </button>
                 </div>
               </div>

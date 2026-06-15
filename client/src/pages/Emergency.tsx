@@ -1,7 +1,9 @@
 /* RGS Emergency Page — 24/7 call out */
-import { useState } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { Phone, Clock, CheckCircle, AlertTriangle, Zap } from "lucide-react";
 import { EmergencySVG, DrainageSVG, PlumbingSVG } from "@/components/SVGTools";
+
+const FORMSPREE_ID = "xrevjlby";
 
 const emergencies = [
   { icon: <AlertTriangle size={20} />, title: "Burst Pipes", desc: "Immediate response to burst or leaking pipes to prevent flooding and water damage." },
@@ -13,9 +15,9 @@ const emergencies = [
 ];
 
 function EmergencyForm() {
-  const [form, setForm] = useState({ name: "", phone: "", address: "", issue: "" });
-  const [sent, setSent] = useState(false);
-  if (sent) return (
+  const [state, handleSubmit] = useForm(FORMSPREE_ID);
+
+  if (state.succeeded) return (
     <div className="text-center py-10">
       <CheckCircle size={56} className="mx-auto mb-4" style={{ color: "#E8F5D8" }} />
       <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#fff" }}>Emergency Request Received!</h3>
@@ -23,32 +25,35 @@ function EmergencyForm() {
     </div>
   );
   return (
-    <form onSubmit={e => { e.preventDefault(); setSent(true); }} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <input type="hidden" name="formSource" value="Emergency Page" />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Your Name *</label>
-          <input required className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
-            placeholder="Full name" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
+          <input required name="name" className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
+            placeholder="Full name" />
+          <ValidationError field="name" prefix="Name" errors={state.errors} className="text-red-300 text-xs mt-1" />
         </div>
         <div>
           <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Phone Number *</label>
-          <input required className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
-            placeholder="07700 000000" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
+          <input required name="phone" className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
+            placeholder="07700 000000" />
         </div>
       </div>
       <div>
         <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Property Address *</label>
-        <input required className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
-          placeholder="Full address including postcode" value={form.address} onChange={e => setForm({ ...form, address: e.target.value })} />
+        <input required name="address" className="w-full px-4 py-3 rounded-lg text-sm outline-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
+          placeholder="Full address including postcode" />
       </div>
       <div>
         <label className="block text-xs font-semibold mb-1" style={{ color: "#b8d880" }}>Describe the Emergency *</label>
-        <textarea required rows={4} className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
-          placeholder="Describe what's happening..." value={form.issue} onChange={e => setForm({ ...form, issue: e.target.value })} />
+        <textarea required name="message" rows={4} className="w-full px-4 py-3 rounded-lg text-sm outline-none resize-none" style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)", color: "#fff" }}
+          placeholder="Describe what's happening..." />
+        <ValidationError field="message" prefix="Message" errors={state.errors} className="text-red-300 text-xs mt-1" />
       </div>
-      <button type="submit" className="w-full py-4 rounded-xl font-bold text-lg transition-all hover:scale-[1.02] active:scale-[0.98]"
+      <button type="submit" disabled={state.submitting} className="w-full py-4 rounded-xl font-bold text-lg transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60"
         style={{ background: "#E8F5D8", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.05em" }}>
-        SEND EMERGENCY REQUEST →
+        {state.submitting ? "SENDING..." : "SEND EMERGENCY REQUEST →"}
       </button>
     </form>
   );

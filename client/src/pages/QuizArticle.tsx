@@ -34,7 +34,7 @@ export default function QuizArticle() {
   };
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="min-h-screen bg-white pt-24 md:pt-28" style={{ fontFamily: "'DM Sans', sans-serif" }}>
 
       {/* Hero */}
       <section className="relative overflow-hidden">

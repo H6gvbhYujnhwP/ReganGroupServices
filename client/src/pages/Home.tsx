@@ -1,9 +1,13 @@
 /* RGS Home Page — Industrial Precision Meets British Craft
    White/Green/Amber palette | Animated SVG tools | Full featured */
 import { useState, useEffect, useRef } from "react";
+import { useForm, ValidationError } from "@formspree/react";
 import { Link } from "wouter";
 import { Phone, CheckCircle, Star, ArrowRight, Shield, Clock, Award, Users } from "lucide-react";
+
 import { WrenchSVG, PlumbingSVG, CCTVSvg, DrainageSVG, ShieldSVG, EmergencySVG } from "@/components/SVGTools";
+
+const FORMSPREE_ID = "xrevjlby";
 
 const RGS_LOGO = "/rgs-circle-logo.png";
 
@@ -84,13 +88,9 @@ const reasons = [
 ];
 
 function ContactFormMini() {
-  const [form, setForm] = useState({ name: "", phone: "", service: "", message: "" });
-  const [sent, setSent] = useState(false);
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-  };
-  if (sent) return (
+  const [state, handleSubmit] = useForm(FORMSPREE_ID);
+
+  if (state.succeeded) return (
     <div className="text-center py-8">
       <CheckCircle size={48} style={{ color: "#77A734" }} className="mx-auto mb-3" />
       <h3 className="text-xl font-bold" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>Thank You!</h3>
@@ -99,22 +99,23 @@ function ContactFormMini() {
   );
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      <input type="hidden" name="formSource" value="Home Page" />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-semibold mb-1" style={{ color: "#2d4a1a" }}>Full Name *</label>
-          <input required className="w-full px-4 py-3 rounded-lg border text-sm outline-none transition-all focus:ring-2" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a", fontFamily: "'DM Sans', sans-serif" }}
-            placeholder="John Smith" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
+          <input required name="name" className="w-full px-4 py-3 rounded-lg border text-sm outline-none transition-all focus:ring-2" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a", fontFamily: "'DM Sans', sans-serif" }}
+            placeholder="John Smith" />
+          <ValidationError field="name" prefix="Name" errors={state.errors} className="text-red-500 text-xs mt-1" />
         </div>
         <div>
           <label className="block text-xs font-semibold mb-1" style={{ color: "#2d4a1a" }}>Phone Number *</label>
-          <input required className="w-full px-4 py-3 rounded-lg border text-sm outline-none transition-all focus:ring-2" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
-            placeholder="07700 000000" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
+          <input required name="phone" className="w-full px-4 py-3 rounded-lg border text-sm outline-none transition-all focus:ring-2" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
+            placeholder="07700 000000" />
         </div>
       </div>
       <div>
         <label className="block text-xs font-semibold mb-1" style={{ color: "#2d4a1a" }}>Service Required</label>
-        <select className="w-full px-4 py-3 rounded-lg border text-sm outline-none" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
-          value={form.service} onChange={e => setForm({ ...form, service: e.target.value })}>
+        <select name="service" className="w-full px-4 py-3 rounded-lg border text-sm outline-none" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}>
           <option value="">Select a service...</option>
           <option>Plumbing</option>
           <option>Drainage</option>
@@ -126,12 +127,12 @@ function ContactFormMini() {
       </div>
       <div>
         <label className="block text-xs font-semibold mb-1" style={{ color: "#2d4a1a" }}>Message</label>
-        <textarea rows={3} className="w-full px-4 py-3 rounded-lg border text-sm outline-none resize-none" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
-          placeholder="Tell us about your requirements..." value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} />
+        <textarea name="message" rows={3} className="w-full px-4 py-3 rounded-lg border text-sm outline-none resize-none" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
+          placeholder="Tell us about your requirements..." />
       </div>
-      <button type="submit" className="w-full py-3 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] active:scale-[0.98]"
+      <button type="submit" disabled={state.submitting} className="w-full py-3 rounded-lg font-bold text-sm transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60"
         style={{ background: "#77A734", color: "#fff", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem", letterSpacing: "0.05em" }}>
-        GET MY FREE QUOTE →
+        {state.submitting ? "SENDING..." : "GET MY FREE QUOTE →"}
       </button>
     </form>
   );

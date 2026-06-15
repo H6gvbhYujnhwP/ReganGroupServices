@@ -1,41 +1,46 @@
 /* RGS Contact Page */
-import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, CheckCircle, MessageSquare } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
+import { Phone, Mail, MapPin, Clock, MessageSquare } from "lucide-react";
 import { PlumbingSVG } from "@/components/SVGTools";
+import { CheckCircle } from "lucide-react";
+
+const FORMSPREE_ID = "xrevjlby";
 
 function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
-  const [sent, setSent] = useState(false);
-  if (sent) return (
+  const [state, handleSubmit] = useForm(FORMSPREE_ID);
+
+  if (state.succeeded) return (
     <div className="text-center py-12">
       <CheckCircle size={56} className="mx-auto mb-4" style={{ color: "#77A734" }} />
       <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>Message Sent!</h3>
       <p style={{ color: "#4a6a2a" }}>We'll get back to you within 2 hours.</p>
     </div>
   );
+
   return (
-    <form onSubmit={e => { e.preventDefault(); setSent(true); }} className="space-y-5">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-xs font-semibold mb-1.5" style={{ color: "#2d4a1a" }}>Full Name *</label>
-          <input required className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all focus:border-green-400" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
-            placeholder="John Smith" value={form.name} onChange={e => setForm({ ...form, name: e.target.value })} />
+          <input required name="name" className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all focus:border-green-400" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
+            placeholder="John Smith" />
+          <ValidationError field="name" prefix="Name" errors={state.errors} className="text-red-500 text-xs mt-1" />
         </div>
         <div>
           <label className="block text-xs font-semibold mb-1.5" style={{ color: "#2d4a1a" }}>Phone Number</label>
-          <input className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all focus:border-green-400" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
-            placeholder="07700 000000" value={form.phone} onChange={e => setForm({ ...form, phone: e.target.value })} />
+          <input name="phone" className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all focus:border-green-400" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
+            placeholder="07700 000000" />
         </div>
       </div>
       <div>
         <label className="block text-xs font-semibold mb-1.5" style={{ color: "#2d4a1a" }}>Email Address *</label>
-        <input required type="email" className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all focus:border-green-400" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
-          placeholder="you@example.com" value={form.email} onChange={e => setForm({ ...form, email: e.target.value })} />
+        <input required type="email" name="email" className="w-full px-4 py-3 rounded-xl border text-sm outline-none transition-all focus:border-green-400" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
+          placeholder="you@example.com" />
+        <ValidationError field="email" prefix="Email" errors={state.errors} className="text-red-500 text-xs mt-1" />
       </div>
       <div>
         <label className="block text-xs font-semibold mb-1.5" style={{ color: "#2d4a1a" }}>Subject</label>
-        <select className="w-full px-4 py-3 rounded-xl border text-sm outline-none" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
-          value={form.subject} onChange={e => setForm({ ...form, subject: e.target.value })}>
+        <select name="subject" className="w-full px-4 py-3 rounded-xl border text-sm outline-none" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}>
           <option value="">Select a subject...</option>
           <option>General Enquiry</option>
           <option>Request a Quote</option>
@@ -49,12 +54,13 @@ function ContactForm() {
       </div>
       <div>
         <label className="block text-xs font-semibold mb-1.5" style={{ color: "#2d4a1a" }}>Message *</label>
-        <textarea required rows={5} className="w-full px-4 py-3 rounded-xl border text-sm outline-none resize-none transition-all focus:border-green-400" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
-          placeholder="Tell us how we can help..." value={form.message} onChange={e => setForm({ ...form, message: e.target.value })} />
+        <textarea required name="message" rows={5} className="w-full px-4 py-3 rounded-xl border text-sm outline-none resize-none transition-all focus:border-green-400" style={{ borderColor: "#b8d880", background: "#fff", color: "#1a2e0a" }}
+          placeholder="Tell us how we can help..." />
+        <ValidationError field="message" prefix="Message" errors={state.errors} className="text-red-500 text-xs mt-1" />
       </div>
-      <button type="submit" className="w-full py-4 rounded-xl font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98]"
+      <button type="submit" disabled={state.submitting} className="w-full py-4 rounded-xl font-bold text-base transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60"
         style={{ background: "#77A734", color: "#fff", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem", letterSpacing: "0.05em" }}>
-        SEND MESSAGE →
+        {state.submitting ? "SENDING..." : "SEND MESSAGE →"}
       </button>
     </form>
   );

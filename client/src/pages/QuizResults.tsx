@@ -141,7 +141,7 @@ export default function QuizResults() {
   const config = RISK_CONFIG[result.riskLevel];
 
   return (
-    <div className="min-h-screen bg-white" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    <div className="min-h-screen bg-white pt-24 md:pt-28" style={{ fontFamily: "'DM Sans', sans-serif" }}>
 
       {/* Results hero */}
       <section className="py-12 border-b" style={{ background: config.bg }}>
