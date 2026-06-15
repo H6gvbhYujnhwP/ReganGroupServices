@@ -11,6 +11,10 @@ import Emergency from "./pages/Emergency";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Quote from "./pages/Quote";
+import QuizLanding from "./pages/QuizLanding";
+import QuizQuestions from "./pages/QuizQuestions";
+import QuizResults from "./pages/QuizResults";
+import QuizArticle from "./pages/QuizArticle";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -26,6 +30,11 @@ function Router() {
         <Route path="/gallery" component={Gallery} />
         <Route path="/contact" component={Contact} />
         <Route path="/quote" component={Quote} />
+        {/* Pipe Health Quiz funnel */}
+        <Route path="/quiz" component={QuizLanding} />
+        <Route path="/quiz/questions" component={QuizQuestions} />
+        <Route path="/quiz/results" component={QuizResults} />
+        <Route path="/quiz/article" component={QuizArticle} />
         <Route path="/404" component={NotFound} />
         <Route component={NotFound} />
       </Switch>

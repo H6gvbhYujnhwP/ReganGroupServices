@@ -2,7 +2,7 @@
    Design: Industrial Precision Meets British Craft */
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, Droplets } from "lucide-react";
 
 const RGS_LOGO = "/rgs-logo.png";
 
@@ -95,6 +95,13 @@ export default function Header() {
           >
             Free Quote
           </Link>
+          <Link
+            href="/quiz"
+            className="hidden md:flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold transition-all duration-200 hover:scale-105 active:scale-95"
+            style={{ background: "#2d4a1a", color: "#E8F5D8", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em", fontSize: "0.85rem" }}
+          >
+            <Droplets size={14} /> PIPE HEALTH CHECK
+          </Link>
           <button
             className="lg:hidden p-2 rounded-lg"
             style={{ color: "#77A734" }}
@@ -153,6 +160,14 @@ export default function Header() {
                 Free Quote
               </Link>
             </div>
+            <Link
+              href="/quiz"
+              className="mt-2 flex items-center justify-center gap-2 py-3 rounded-lg font-bold text-sm"
+              style={{ background: "#2d4a1a", color: "#E8F5D8", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.04em" }}
+              onClick={() => setMobileOpen(false)}
+            >
+              <Droplets size={15} /> FREE PIPE HEALTH CHECK
+            </Link>
           </div>
         </div>
       )}

@@ -369,6 +369,36 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PIPE HEALTH QUIZ CTA BANNER */}
+      <section className="py-14" style={{ background: "#f9fdf4", borderTop: "2px solid #dff0c0", borderBottom: "2px solid #dff0c0" }}>
+        <div className="container">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div className="flex-1 max-w-xl">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold mb-4" style={{ background: "#e8f5d8", color: "#77A734" }}>
+                FREE — TAKES UNDER 3 MINUTES
+              </div>
+              <h2 className="text-3xl md:text-4xl font-extrabold mb-3" style={{ fontFamily: "'Barlow Condensed', sans-serif", color: "#1a2e0a" }}>
+                IS YOUR PROPERTY'S DRAINAGE A<br />
+                <span style={{ color: "#77A734" }}>TICKING TIME BOMB?</span>
+              </h2>
+              <p className="text-base leading-relaxed mb-2" style={{ color: "#4a6a2a" }}>
+                Sewage incidents cost UK landlords £7,000–£30,000 per event. Answer 8 quick questions and get your free pipe health score — plus tailored recommendations from our drainage experts.
+              </p>
+            </div>
+            <div className="flex flex-col items-center gap-4">
+              <Link
+                href="/quiz"
+                className="inline-flex items-center gap-3 px-10 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 active:scale-95"
+                style={{ background: "#77A734", color: "#fff", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.2rem", letterSpacing: "0.05em" }}
+              >
+                START FREE PIPE HEALTH CHECK <ArrowRight size={20} />
+              </Link>
+              <p className="text-xs" style={{ color: "#4a6a2a" }}>Free · Instant results · No obligation</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CONTACT FORM SECTION */}
       <section className="py-20" style={{ background: "#fff" }}>
         <div className="container">
