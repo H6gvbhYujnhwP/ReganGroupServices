@@ -94,7 +94,7 @@ export default function Contact() {
             </h2>
             <div className="space-y-5 mb-10">
               {[
-                { icon: <Phone size={22} />, label: "Phone", val: "01234 567 890", link: "tel:+441234567890", color: "#77A734" },
+                { icon: <Phone size={22} />, label: "Phone", val: "01702 614260", link: "tel:01702614260", color: "#77A734" },
                 { icon: <Mail size={22} />, label: "Email", val: "info@regangroupservices.com", link: "mailto:info@regangroupservices.com", color: "#77A734" },
                 { icon: <MapPin size={22} />, label: "Areas Served", val: "London & Essex", link: null, color: "#E8F5D8" },
                 { icon: <Clock size={22} />, label: "Emergency", val: "24/7 Available", link: null, color: "#E8F5D8" },

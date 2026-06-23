@@ -242,10 +242,10 @@ export default function Services() {
                     {svc.cta} <ArrowRight size={14} />
                   </Link>
                   {svc.id === "emergency" && (
-                    <a href="tel:+441234567890"
+                    <a href="tel:01702614260"
                       className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm border-2 transition-all hover:scale-105"
                       style={{ borderColor: "#E8F5D8", color: "#E8F5D8", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1rem" }}>
-                      <Phone size={14} /> 01234 567 890
+                      <Phone size={14} /> 01702 614260
                     </a>
                   )}
                 </div>

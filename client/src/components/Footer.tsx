@@ -17,7 +17,7 @@ export default function Footer() {
             </span>
           </div>
           <a
-            href="tel:+441234567890"
+            href="tel:01702614260"
             className="flex items-center gap-2 px-6 py-2 rounded-lg font-bold text-sm transition-all hover:scale-105"
             style={{ background: "#1a2e0a", color: "#E8F5D8", fontFamily: "'DM Sans', sans-serif" }}
           >
@@ -93,8 +93,8 @@ export default function Footer() {
               <Phone size={16} style={{ color: "#E8F5D8", marginTop: 2 }} />
               <div>
                 <div className="text-xs" style={{ color: "#9dc46b" }}>Phone</div>
-                <a href="tel:+441234567890" className="text-sm font-semibold hover:text-white transition-colors" style={{ color: "#fff" }}>
-                  01234 567 890
+                <a href="tel:01702614260" className="text-sm font-semibold hover:text-white transition-colors" style={{ color: "#fff" }}>
+                  01702 614260
                 </a>
               </div>
             </li>

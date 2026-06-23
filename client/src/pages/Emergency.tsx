@@ -77,10 +77,10 @@ export default function Emergency() {
             <p className="text-base leading-relaxed mb-8" style={{ color: "#9dc46b" }}>
               Maintenance emergencies don't wait for office hours. Our team is available around the clock, every day of the year — including weekends and bank holidays.
             </p>
-            <a href="tel:+441234567890"
+            <a href="tel:01702614260"
               className="inline-flex items-center gap-3 px-10 py-5 rounded-xl font-bold text-xl transition-all hover:scale-105 active:scale-95"
               style={{ background: "#E8F5D8", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "0.05em" }}>
-              <Phone size={24} /> CALL 01234 567 890
+              <Phone size={24} /> CALL 01702 614260
             </a>
             <div className="flex items-center gap-2 mt-4 text-sm" style={{ color: "#9dc46b" }}>
               <Clock size={14} /> Average response time: under 1 hour

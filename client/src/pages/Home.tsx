@@ -356,7 +356,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex gap-4">
-            <a href="tel:+441234567890"
+            <a href="tel:01702614260"
               className="flex items-center gap-2 px-8 py-4 rounded-xl font-bold transition-all hover:scale-105"
               style={{ background: "#E8F5D8", color: "#1a2e0a", fontFamily: "'Barlow Condensed', sans-serif", fontSize: "1.1rem" }}>
               <Phone size={20} /> CALL NOW
@@ -417,7 +417,7 @@ export default function Home() {
               </p>
               <div className="space-y-4">
                 {[
-                  { icon: <Phone size={18} />, label: "Call us anytime", value: "01234 567 890" },
+                  { icon: <Phone size={18} />, label: "Call us anytime", value: "01702 614260" },
                   { icon: <Clock size={18} />, label: "Emergency line", value: "Available 24/7" },
                   { icon: <CheckCircle size={18} />, label: "Response time", value: "Within 2 hours" },
                 ].map((item, i) => (
